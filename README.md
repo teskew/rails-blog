@@ -1,5 +1,5 @@
 # rails-blog
-  —-My rails project———
+     —-My rails project———
 The project is about creating a physician office where the user can make an appointment within the list of physicians or make an appointment with a new physician.
 When we first start a project, the most important thing to do is go over the relationships that the Models will have.
 Now here we can see how my model/class will interact with each other.
@@ -21,7 +21,7 @@ class Category < ApplicationRecord
     has_many :physicians, through: :appointments
 End
 
-The database
+The Database
 
 I used a Rails "generator", which creates and fills in a bunch of files so I don't have to. I generated appointments, users and categories, models, controller, views, and a physician.
 
@@ -37,13 +37,11 @@ u1= User.create(username: "Jone", email: "jone@jone.com", password: "Jon")
  I typed $ rails db:rollback  when I made mistake with db and the last series of migrations that you ran will be reversed and I will be  back to where I was. Then I just edit the file, rerun the migrations, 
 
 Controler
-   
-		I create a physician #shaw, #index, #create routes and controller the page that displays the physicians’s name,  and appointments, with each appointment's date, time, and user name is linking 
+	the controllers are the logical center of my app. It interact between views and model. It is a responsible to route from request (user) to model and renders the view.	I create a physician #shaw, #index, #create routes and controller the page that displays the physicians’s name,  and appointments, with each appointment's date, time, and user name is linking 
 		I create a appointment#show , #index, #create page that lists the date and time for each of their appointments and links to category page.
 	I create a user #index page that displays a link to each user’s show page and the appointments they have.
 
 Validation
-
 Validations are used to ensure that only valid data is saved into database.I Validate each models. Let’s say you want to make sure a username is unique
 what happens if two users almost simultaneously submit the same username and it is received by two separate concurrent instances of your application?
  On User module validates :email, presence: true, uniqueness: true
